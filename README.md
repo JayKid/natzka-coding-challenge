@@ -26,6 +26,8 @@
 ## Early considerations
 
 - Use Vite with TS for a fast starter pack
+- Use [MUI's React tree view](https://mui.com/x/react-tree-view/) for the visualization of the tree structure
+  - Need to map the input structure to the expected format from MUI.
 
 
 ## Notes

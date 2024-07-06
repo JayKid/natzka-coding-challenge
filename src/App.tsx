@@ -1,4 +1,5 @@
 import './App.css'
+import TreeViewer from './components/TreeViewer'
 
 function App() {
   return (
@@ -6,7 +7,9 @@ function App() {
       <header>
         <h1>Natzka coding challenge</h1>
       </header>
-      <section></section>
+      <section>
+        <TreeViewer />
+      </section>
     </main>
   )
 }
