@@ -31,3 +31,11 @@
 
 
 ## Notes
+
+### Production-ready (or just) things missing
+
+- Tests
+- Production build
+- i18n
+- Styled components usage
+- Some performance assessment might be involved considering the product Natzka builds
