@@ -15,6 +15,7 @@ const MUI_X_PRODUCTS: TreeViewBaseItem[] = [
             { id: 'grid-premium', label: '@mui/x-data-grid-premium' },
         ],
     },
+    { id: "second-root", label: "Second root" }
 ]
 
 // TO-DO: Use treeMapper to convert string array input to MUI Rich Tree format
