@@ -80,8 +80,6 @@ export const mapTreeInputToMUIRichTreeFormat = (directoryPaths: string[]): TreeV
         else {
             pathsTrees = [...pathsTrees, new Tree(nestedDirectories, 0)];
         }
-        console.log("paths trees:", JSON.stringify(pathsTrees))
-
     })
     pathsTrees.forEach(pathTree => {
         const muiStructureFromPathTree = createMUIStructureFromTree(pathTree)
