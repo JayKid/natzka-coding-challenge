@@ -1,11 +1,11 @@
 import { mapTreeInputToMUIRichTreeFormat } from "./treeMapper"
 
 describe("treeMapper", () => {
-    xtest("should return an empty array when given an empty array", async () => {
+    test("should return an empty array when given an empty array", async () => {
         expect(mapTreeInputToMUIRichTreeFormat([])).toStrictEqual([]);
     });
 
-    xtest("should return a properly formatted structure when given one path", () => {
+    test("should return a properly formatted structure when given one path", () => {
         const inputWithOnePath = [
             '/root',
         ]
@@ -19,7 +19,7 @@ describe("treeMapper", () => {
 
     })
 
-    xtest("should return a properly formatted structure when given one path with two levels of depth", () => {
+    test("should return a properly formatted structure when given one path with two levels of depth", () => {
         const inputWithTwoLevelsOfDepth = [
             '/root/foo',
         ]
@@ -40,7 +40,7 @@ describe("treeMapper", () => {
     })
 
 
-    xtest("should return a properly formatted structure when given two paths with a common root", () => {
+    test("should return a properly formatted structure when given two paths with a common root", () => {
         const inputWithTwoLevelsOfDepth = [
             '/root/foo',
             '/root/var'
