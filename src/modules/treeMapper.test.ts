@@ -39,6 +39,33 @@ describe("treeMapper", () => {
 
     })
 
+
+    test("should return a properly formatted structure when given two paths with a common root", () => {
+        const inputWithTwoLevelsOfDepth = [
+            '/root/foo',
+            '/root/var'
+        ]
+        const expectedMUIFormattedStructure = [{
+            id: 'root',
+            label: "root",
+            children: [
+                {
+                    id: 'foo',
+                    label: 'foo',
+                    children: []
+                },
+                {
+                    id: 'var',
+                    label: 'var',
+                    children: []
+                }
+            ]
+        }]
+
+        expect(mapTreeInputToMUIRichTreeFormat(inputWithTwoLevelsOfDepth)).toStrictEqual(expectedMUIFormattedStructure);
+
+    })
+
     xtest("should return a properly formatted structure when given several paths", () => {
         const exampleInput = [
             '/root/test',
