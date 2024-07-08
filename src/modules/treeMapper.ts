@@ -48,7 +48,7 @@ export const mapTreeInputToMUIRichTreeFormat = (directoryPaths: string[]): TreeV
 
     // Initialize variables
     const muiPathsStructure: TreeViewBaseItem[] = [];
-    let pathsTree: Tree[] = [];
+    let pathsTrees: Tree[] = [];
 
     // Process each directory path
     directoryPaths.forEach(path => {
@@ -58,13 +58,13 @@ export const mapTreeInputToMUIRichTreeFormat = (directoryPaths: string[]): TreeV
         let currentLevel = 0;
 
         let foundExistingTreeForDirectory: Tree | boolean = true;
-        let nextFoundTreeForDirectory = pathsTree.find( tree => tree?.value === nestedDirectories[currentLevel]);
+        let nextFoundTreeForDirectory = pathsTrees.find( tree => tree?.value === nestedDirectories[currentLevel]);
 
         // Check subsequent child paths until there is no match
         while (foundExistingTreeForDirectory && nextFoundTreeForDirectory) {
             currentLevel = currentLevel + 1
             foundExistingTreeForDirectory = nextFoundTreeForDirectory
-            nextFoundTreeForDirectory = pathsTree.find( tree => tree?.value === nestedDirectories[currentLevel]);
+            nextFoundTreeForDirectory = pathsTrees.find( tree => tree?.value === nestedDirectories[currentLevel]);
         }
 
         // If there was a partial match, insert the child node where appropriate
@@ -78,11 +78,17 @@ export const mapTreeInputToMUIRichTreeFormat = (directoryPaths: string[]): TreeV
 
         // If there was no partial match, create a new Tree for this path
         else {
-            pathsTree = [new Tree(nestedDirectories, 0)];
+            pathsTrees = [...pathsTrees, new Tree(nestedDirectories, 0)];
         }
+        console.log("paths trees:", JSON.stringify(pathsTrees))
+
     })
-    pathsTree.forEach(pathTree => {
-        muiPathsStructure.push(createMUIStructureFromTree(pathTree)!)
+    pathsTrees.forEach(pathTree => {
+        const muiStructureFromPathTree = createMUIStructureFromTree(pathTree)
+        
+        if (muiStructureFromPathTree) {
+            muiPathsStructure.push(muiStructureFromPathTree)
+        }
     })
 
     return muiPathsStructure;
