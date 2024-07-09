@@ -35,10 +35,15 @@
 ### Production-ready missing items
 
 - Component tests
-  - Since there is no logic in the React components, I focused the testing on the module logic.
+  - Since there is no logic in the React components, I focused the testing on the module logic but still added a component test to showcase the usage.
 - Production build
   - `npm run build` will create a production build in the `dist/` folder
 - i18n
   - Not a concern for the current assignment, but a production-ready app would need to take care of this when catering to users from different countries
 - Some performance assessment might be involved considering the product Natzka builds
   - Considering the volume of nested products and complexity of data, fine-tuning the mapper could prove important when optimizing client-side performance
+
+## Usage
+
+- Use `npm run dev` to run the app. 
+- If you want to try out different inputs, modify `src/TreeViewer.tsx` and change the value of the `exampleInput` variable.
