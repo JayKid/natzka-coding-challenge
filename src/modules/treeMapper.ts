@@ -1,5 +1,9 @@
 import { TreeViewBaseItem } from "@mui/x-tree-view"
 
+type DisplayOptions = {
+    showSlashes: boolean
+}
+
 class Tree {
     level: number;
     value: string;
@@ -40,7 +44,7 @@ const createMUIStructureFromTree = (pathsTree: Tree): TreeViewBaseItem | undefin
     }
 }
 
-export const mapTreeInputToMUIRichTreeFormat = (directoryPaths: string[]): TreeViewBaseItem[] => {
+export const mapTreeInputToMUIRichTreeFormat = (directoryPaths: string[], options?: DisplayOptions): TreeViewBaseItem[] => {
     // Input validation
     if (directoryPaths.length === 0) {
         return []
@@ -52,7 +56,14 @@ export const mapTreeInputToMUIRichTreeFormat = (directoryPaths: string[]): TreeV
 
     // Process each directory path
     directoryPaths.forEach(path => {
-        const nestedDirectories = path.split('/').filter(p => p !== '');
+        let nestedDirectories = path.split('/').filter(p => p !== '');
+
+        // Display options
+        if (options?.showSlashes) {
+            nestedDirectories = nestedDirectories.map(path => {
+                return `/${path}`
+            })
+        }
 
         // Find if there is already a tree for a part/all of this path
         let currentLevel = 0;

@@ -7,9 +7,7 @@ function App() {
       <header>
         <h1>Natzka coding challenge</h1>
       </header>
-      <section>
-        <TreeViewer />
-      </section>
+      <TreeViewer />
     </main>
   )
 }
