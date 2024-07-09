@@ -32,10 +32,13 @@
 
 ## Notes
 
-### Production-ready (or just) things missing
+### Production-ready missing items
 
-- Tests
+- Component tests
+  - Since there is no logic in the React components, I focused the testing on the module logic.
 - Production build
+  - `npm run build` will create a production build in the `dist/` folder
 - i18n
-- Styled components usage
+  - Not a concern for the current assignment, but a production-ready app would need to take care of this when catering to users from different countries
 - Some performance assessment might be involved considering the product Natzka builds
+  - Considering the volume of nested products and complexity of data, fine-tuning the mapper could prove important when optimizing client-side performance
