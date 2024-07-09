@@ -1,8 +1,8 @@
-import { mapTreeInputToMUIRichTreeFormat } from './treeMapper';
+import { mapFilesystemPathsToMUIRichTreeFormat } from './treeMapper';
 
 describe('treeMapper', () => {
     test('should return an empty array when given an empty array', async () => {
-        expect(mapTreeInputToMUIRichTreeFormat([])).toStrictEqual([]);
+        expect(mapFilesystemPathsToMUIRichTreeFormat([])).toStrictEqual([]);
     });
 
     test('should return a properly formatted structure when given one path', () => {
@@ -15,9 +15,9 @@ describe('treeMapper', () => {
             },
         ];
 
-        expect(mapTreeInputToMUIRichTreeFormat(inputWithOnePath)).toStrictEqual(
-            expectedMUIFormattedStructure,
-        );
+        expect(
+            mapFilesystemPathsToMUIRichTreeFormat(inputWithOnePath),
+        ).toStrictEqual(expectedMUIFormattedStructure);
     });
 
     test('should return a properly formatted structure when given one path with two levels of depth', () => {
@@ -37,7 +37,7 @@ describe('treeMapper', () => {
         ];
 
         expect(
-            mapTreeInputToMUIRichTreeFormat(inputWithTwoLevelsOfDepth),
+            mapFilesystemPathsToMUIRichTreeFormat(inputWithTwoLevelsOfDepth),
         ).toStrictEqual(expectedMUIFormattedStructure);
     });
 
@@ -63,7 +63,7 @@ describe('treeMapper', () => {
         ];
 
         expect(
-            mapTreeInputToMUIRichTreeFormat(inputWithTwoLevelsOfDepth),
+            mapFilesystemPathsToMUIRichTreeFormat(inputWithTwoLevelsOfDepth),
         ).toStrictEqual(expectedMUIFormattedStructure);
     });
 
@@ -104,8 +104,8 @@ describe('treeMapper', () => {
             },
         ];
 
-        expect(mapTreeInputToMUIRichTreeFormat(exampleInput)).toStrictEqual(
-            expectedMUIFormattedStructure,
-        );
+        expect(
+            mapFilesystemPathsToMUIRichTreeFormat(exampleInput),
+        ).toStrictEqual(expectedMUIFormattedStructure);
     });
 });

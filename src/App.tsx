@@ -2,9 +2,9 @@ import TreeViewer from './components/TreeViewer';
 import { styled } from '@mui/system';
 
 const MainContainer = styled('main')({
-  maxWidth: "1280px",
-  margin: "0 auto",
-  padding: "2rem"
+    maxWidth: '1280px',
+    margin: '0 auto',
+    padding: '2rem',
 });
 
 function App() {

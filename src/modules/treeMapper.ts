@@ -50,7 +50,7 @@ const createMUIStructureFromTree = (
     }
 };
 
-export const mapTreeInputToMUIRichTreeFormat = (
+export const mapFilesystemPathsToMUIRichTreeFormat = (
     directoryPaths: string[],
     options?: DisplayOptions,
 ): TreeViewBaseItem[] => {

@@ -1,9 +1,9 @@
 import { RichTreeView } from '@mui/x-tree-view/RichTreeView';
-import { mapTreeInputToMUIRichTreeFormat } from '../modules/treeMapper';
+import { mapFilesystemPathsToMUIRichTreeFormat } from '../modules/treeMapper';
 
 const exampleInput = ['/root/test', '/dev/null', '/root/something/somewhere'];
 
-const treeStructuredData = mapTreeInputToMUIRichTreeFormat(exampleInput, {
+const treeStructuredData = mapFilesystemPathsToMUIRichTreeFormat(exampleInput, {
     showSlashes: true,
 });
 
